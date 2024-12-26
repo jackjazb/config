@@ -1,0 +1,19 @@
+[user]
+email = jackjazb@gmail.com
+name = Jack Jazrawy-Brown
+[push]
+autoSetupRemote = true
+[pull]
+rebase = true
+[rebase]
+autostash = true
+[init]
+defaultBranch = main
+[commit]
+verbose = true
+[core]
+pager = cat
+[diff]
+algorithm = histogram
+[merge]
+conflictstyle = zdiff3

@@ -1,0 +1,30 @@
+services:
+  jellyfin:
+    image: jellyfin/jellyfin
+    container_name: jellyfin
+    network_mode: 'host'
+    volumes:
+      - /home/jack/jellyfin/config:/config
+      - /home/jack/jellyfin/cache:/cache
+      - type: bind
+        source: /home/jack/jellyfin/media/music
+        target: /media
+        read_only: true
+    restart: 'unless-stopped'
+  samba:
+    image: dperson/samba
+    environment:
+      TZ: 'EST5EDT'
+    network_mode: 'host'
+    read_only: true
+    tmpfs:
+      - /tmp
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    volumes:
+      - type: bind
+        source: /home/jack/jellyfin/media/music
+        target: /mnt
+        read_only: true
+    command: '-s "Mount;/mnt;yes;yes;yes;all;none" -S'

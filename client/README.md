@@ -1,4 +1,4 @@
-# dotfiles
+# Client Setup
 
 Sets up any configuration needed on a new machine.
 

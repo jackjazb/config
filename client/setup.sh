@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-# Perfoms first time setup, installing various packages.
+# Performs first time setup, installing various packages.
 echo "upgrading system"
 sudo apt update
 sudo apt upgrade -y
@@ -11,7 +11,7 @@ sudo apt install git -y
 echo "installed git version $(git --version)"
 
 echo "installing other packages"
-sudo apt -y install vim curl gcc libssl-dev tmux zsh
+sudo apt -y install vim curl gcc libssl-dev tmux zsh jq
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install

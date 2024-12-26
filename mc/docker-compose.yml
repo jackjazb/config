@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  mc:
+    container_name: mc
+    restart: unless-stopped
+    image: itzg/minecraft-server
+    tty: true
+    stdin_open: true
+    ports:
+      - "25565:25565"
+    environment:
+      EULA: "TRUE"
+      MEMORY: "2G"
+      ENABLE_WHITELIST: "TRUE"
+      WHITELIST: "jackjazb, archbuscam"
+      ICON: "icon.png"
+      OVERRIDE_ICON: "TRUE"
+      MOTD: "welcome to the matrix"
+    volumes:
+      - ./data:/data

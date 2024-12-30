@@ -50,3 +50,5 @@ export PATH="$HOME/.local/share/mise/shims:$PATH"
 eval "$(zoxide init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(mise activate zsh)"

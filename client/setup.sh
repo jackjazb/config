@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 # Performs first time setup, installing various packages.
 echo "upgrading system"

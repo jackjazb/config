@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Installs any GUI related config.
 

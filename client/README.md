@@ -10,7 +10,13 @@ Run the following to set up a new system:
 source ./setup.sh
 ```
 
-Everything in `./dotfiles` will be symlinked, so edits to the system's config can be done from this repo.
+After `oh-my-zsh` is installed, run to install packages.
+
+```sh
+source ./packages.sh
+```
+
+This also runs `dotfiles.sh`, which symlinks everything in `./dotfiles` - edits to the system's config can then be made from this repo.
 
 ## GUI Customisation
 

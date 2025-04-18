@@ -1,156 +1,155 @@
 {
-    "explorer.confirmDragAndDrop": false,
-    "explorer.confirmDelete": false,
-    "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "typescript.preferences.importModuleSpecifier": "non-relative",
-    "javascript.format.semicolons": "insert",
-    "typescript.format.semicolons": "insert",
-    "[python]": {
-        "editor.formatOnType": true
-    },
-    "workbench.iconTheme": "vscode-icons",
-    "editor.rulers": [
-        100
-    ],
-    "window.commandCenter": false,
-    "[markdown]": {
-        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
-    },
-    "eslint.validate": [
-        "tsx",
-        "typescript",
-        "javascript",
-        "typescriptreact"
-    ],
-    "eslint.format.enable": true,
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "vsicons.dontShowNewVersionMessage": true,
-    "debug.allowBreakpointsEverywhere": true,
-    "extensions.ignoreRecommendations": true,
-    "[shellscript]": {
-        "editor.defaultFormatter": "foxundermoon.shell-format"
-    },
-    "redhat.telemetry.enabled": false,
-    "editor.fontFamily": "Roboto Mono",
-    "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'",
-    "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "editor.indentSize": "tabSize",
-    "editor.tabSize": 4,
-    "[dockerfile]": {
-        "editor.defaultFormatter": "foxundermoon.shell-format"
-    },
-    "[latex]": {
-        "editor.wordWrap": "on",
-        "editor.defaultFormatter": "mathematic.vscode-latex"
-    },
-    "editor.accessibilitySupport": "off",
-    "explorer.confirmPasteNative": false,
-    "cSpell.userWords": [
-        "Axum",
-        "centralise",
-        "Color",
-        "Discogs",
-        "gogosseract",
-        "Itunes",
-        "Jazrawy",
-        "lembas",
-        "lmbas",
-        "LSFM",
-        "mealplan",
-        "modernc",
-        "ngrok",
-        "nooch",
-        "noto",
-        "ondataavailable",
-        "organised",
-        "Pressable",
-        "recipebox",
-        "signup",
-        "Strapi",
-        "thresholding",
-        "unblockable",
-        "upgrader",
-        "upsert",
-        "upserting"
-    ],
-    "cSpell.language": "en-GB",
-    "accessibility.signals.lineHasError": {
-        "sound": "off"
-    },
-    "accessibility.signals.lineHasFoldedArea": {
-        "sound": "off"
-    },
-    "cSpell.enabled": true,
-    "accessibility.signals.lineHasInlineSuggestion": {
-        "sound": "off"
-    },
-    "accessibility.signals.taskFailed": {
-        "sound": "off"
-    },
-    "editor.linkedEditing": true,
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
-    },
-    "cSpell.enableFiletypes": [
-        "!rust"
-    ],
-    "svelte.enable-ts-plugin": true,
-    "workbench.editorAssociations": {
-        "*.db": "sqlite-viewer.option"
-    },
-    "security.workspace.trust.untrustedFiles": "open",
-    "go.toolsManagement.autoUpdate": true,
-    "editor.codeActionsOnSave": {
-        "source.fixAll": "explicit",
-        "source.organizeImports": "explicit",
-        "source.sortMembers": "explicit"
-    },
-    "cSpell.languageSettings": [
-        {
-            "languageId": "*",
-            "locale": "en-US, en-GB"
-        }
-    ],
-    "explorer.fileNesting.patterns": {
-        "*.ts": "${capture}.js",
-        "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
-        "*.jsx": "${capture}.js",
-        "*.tsx": "${capture}.ts",
-        "tsconfig.json": "tsconfig.*.json",
-        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
-        "Cargo.toml": "Cargo.lock",
-        "*.sqlite": "${capture}.${extname}-*",
-        "*.db": "${capture}.${extname}-*",
-        "*.sqlite3": "${capture}.${extname}-*",
-        "*.db3": "${capture}.${extname}-*",
-        "*.sdb": "${capture}.${extname}-*",
-        "*.s3db": "${capture}.${extname}-*"
-    },
-    "files.associations": {
-        "*.css": "css",
-        "*.html": "html",
-        "*.njk": "liquid"
-    },
-    "workbench.activityBar.location": "hidden",
-    "makefile.configureOnOpen": false,
-    "[typst]": {
-        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
-    },
-    "[typst-code]": {
-        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
-    },
-    "editor.formatOnSave": true,
-    "[liquid]": {
-        "editor.defaultFormatter": "sissel.shopify-liquid",
-        "editor.formatOnSave": true
-    },
-    "git.openRepositoryInParentFolders": "always"
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "javascript.format.semicolons": "insert",
+  "typescript.format.semicolons": "insert",
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "workbench.iconTheme": "vscode-icons",
+  "editor.rulers": [
+    100
+  ],
+  "window.commandCenter": false,
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+  "eslint.validate": [
+    "svelte",
+    "tsx",
+    "typescript",
+    "javascript",
+    "typescriptreact"
+  ],
+  "eslint.format.enable": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "vsicons.dontShowNewVersionMessage": true,
+  "debug.allowBreakpointsEverywhere": true,
+  "extensions.ignoreRecommendations": true,
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "redhat.telemetry.enabled": false,
+  "editor.fontFamily": "Roboto Mono",
+  "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'",
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "editor.indentSize": "tabSize",
+  "editor.tabSize": 2,
+  "[dockerfile]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "editor.accessibilitySupport": "off",
+  "explorer.confirmPasteNative": false,
+  "cSpell.userWords": [
+    "Axum",
+    "centralise",
+    "Color",
+    "Discogs",
+    "gogosseract",
+    "Itunes",
+    "Jazrawy",
+    "lembas",
+    "lmbas",
+    "LSFM",
+    "mealplan",
+    "modernc",
+    "ngrok",
+    "nooch",
+    "noto",
+    "ondataavailable",
+    "organised",
+    "Pressable",
+    "recipebox",
+    "signup",
+    "Strapi",
+    "thresholding",
+    "unblockable",
+    "upgrader",
+    "upsert",
+    "upserting"
+  ],
+  "cSpell.language": "en-GB",
+  "accessibility.signals.lineHasError": {
+    "sound": "off"
+  },
+  "accessibility.signals.lineHasFoldedArea": {
+    "sound": "off"
+  },
+  "cSpell.enabled": true,
+  "accessibility.signals.lineHasInlineSuggestion": {
+    "sound": "off"
+  },
+  "accessibility.signals.taskFailed": {
+    "sound": "off"
+  },
+  "editor.linkedEditing": true,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "svelte.enable-ts-plugin": true,
+  "workbench.editorAssociations": {
+    "*.db": "sqlite-viewer.option"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "go.toolsManagement.autoUpdate": true,
+  "godotTools.editorPath.godot4": "c:\\Users\\Jack Jazrawy-Brown\\Downloads\\Godot_v4.2.2-stable_win64.exe\\Godot_v4.2.2-stable_win64.exe",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit",
+    "source.sortMembers": "explicit"
+  },
+  "cSpell.languageSettings": [
+    {
+      "languageId": "*",
+      "locale": "en-US, en-GB"
+    }
+  ],
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+    "Cargo.toml": "Cargo.lock",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.db": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.s3db": "${capture}.${extname}-*"
+  },
+  "files.associations": {
+    "*.css": "css",
+    "*.html": "html",
+    "*.njk": "liquid",
+    "*.ts": "typescript"
+  },
+  "workbench.activityBar.location": "hidden",
+  "[typst]": {
+    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
+  },
+  "[typst-code]": {
+    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
+  },
+  "editor.formatOnSave": true,
+  "[liquid]": {
+    "editor.defaultFormatter": "sissel.shopify-liquid",
+    "editor.formatOnSave": true
+  },
+  "git.openRepositoryInParentFolders": "always",
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "editor.detectIndentation": false
 }

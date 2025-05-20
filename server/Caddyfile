@@ -1,3 +1,19 @@
-shire.bear-antares.ts.net
+shire.bear-antares.ts.net {
+	handle_path /jellyfin/* {
+		reverse_proxy :8096
+	}
 
-reverse_proxy :8096
+	handle_path /portainer/* {
+		reverse_proxy :9443 {
+			transport http {
+				tls
+				tls_insecure_skip_verify
+			}
+		}
+	}
+
+	handle {
+		root * /srv
+		file_server
+	}
+}

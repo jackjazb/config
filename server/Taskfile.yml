@@ -1,0 +1,14 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  caddy:
+    desc: Sync Caddy's config and reload it
+    cmds:
+      - sudo cp ./Caddyfile /etc/caddy/Caddyfile
+      - sudo systemctl reload caddy
+  site:
+    desc: Sync the root link website to /srv
+    cmds:
+      - sudo cp root.html /srv/index.html 

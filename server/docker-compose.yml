@@ -11,6 +11,7 @@ services:
         target: /media
         read_only: true
     restart: 'unless-stopped'
+  
   samba:
     image: dperson/samba
     environment:
@@ -28,3 +29,16 @@ services:
         target: /mnt
         read_only: true
     command: '-s "Mount;/mnt;yes;yes;yes;all;none" -S'
+  
+  portainer:
+    image: portainer/portainer-ee:latest
+    ports:
+      - 9443:9443
+      - 8000:8000
+    volumes:
+        - portainer_data:/data
+        - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+    
+volumes:
+  portainer_data:

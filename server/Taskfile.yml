@@ -11,4 +11,4 @@ tasks:
   site:
     desc: Sync the root link website to /srv
     cmds:
-      - sudo cp root.html /srv/index.html 
+      - sudo rsync -avu --delete ./site/ /srv/ 

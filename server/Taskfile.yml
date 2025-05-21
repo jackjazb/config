@@ -1,14 +1,44 @@
 # https://taskfile.dev
 
-version: '3'
+version: "3"
+
+vars:
+  remote: root@shire.bear-antares.ts.net
+  dir: /home/jack
 
 tasks:
+  sync:
+    desc: Syncs Caddy, Docker and the homepage
+    deps:
+      - caddy
+      - site
+      - docker
+
   caddy:
-    desc: Sync Caddy's config and reload it
+    desc: Sync and reload Caddy
     cmds:
-      - sudo cp ./Caddyfile /etc/caddy/Caddyfile
-      - sudo systemctl reload caddy
+      - rsync ./Caddyfile {{.remote}}:/etc/caddy/Caddyfile
+      - ssh {{.remote}} "bash -c 'systemctl reload caddy'"
+
   site:
-    desc: Sync the root link website to /srv
+    desc: Sync the root link website to /srv/
     cmds:
-      - sudo rsync -avu --delete ./site/ /srv/ 
+      - rsync -avu --delete ./site/ {{.remote}}:/srv/
+
+  status:
+    vars:
+      docker_format: "{{ `id: {{ .ID }}, name: {{ .Names }}, image: {{ .Image }}` }}"
+    cmds:
+      - ssh {{.remote}} "hostname -I"
+      - ssh {{.remote}} "docker ps --format '{{.docker_format}}'"
+
+  docker:
+    desc: Sync and reload Docker
+    cmds:
+      - rsync ./docker-compose.yml {{.remote}}:{{.dir}}/docker-compose.yml
+      - ssh {{.remote}} "bash -c 'docker compose -f {{.dir}}/docker-compose.yml up -d'"
+
+  keys:
+    desc: Sync trusted public keys
+    cmds:
+      - rsync ./authorized_keys {{.remote}}:/root/.ssh/authorized_keys

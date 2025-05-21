@@ -14,6 +14,7 @@ services:
   
   samba:
     image: dperson/samba
+    container_name: samba
     environment:
       TZ: 'EST5EDT'
     network_mode: 'host'
@@ -31,6 +32,7 @@ services:
     command: '-s "Mount;/mnt;yes;yes;yes;all;none" -S'
   
   portainer:
+    container_name: portainer
     image: portainer/portainer-ee:latest
     ports:
       - 9443:9443

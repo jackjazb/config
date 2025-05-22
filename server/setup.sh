@@ -20,5 +20,9 @@ sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Additional setup
-sudo apt -y install vim curl caddy
+sudo apt -y install vim curl caddy jq
 mkdir -p {{.dir}}/jellyfin/media/music
+
+wget -O fastfetch.deb https://github.com/fastfetch-cli/fastfetch/releases/download/2.43.0/fastfetch-linux-amd64.deb
+sudo apt -y install fastfetch.deb
+rm fastfetch.deb

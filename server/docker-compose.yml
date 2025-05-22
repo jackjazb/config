@@ -1,5 +1,5 @@
 services:
-  # Jellyfun
+  # Jellyfin
   jellyfin:
     image: jellyfin/jellyfin
     container_name: jellyfin

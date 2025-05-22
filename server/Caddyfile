@@ -3,6 +3,14 @@ shire.bear-antares.ts.net {
 		reverse_proxy :8096
 	}
 
+	handle_path /beszel/* {
+		reverse_proxy :8090
+	}
+
+	handle_path /couchdb/* {
+		reverse_proxy :5984
+	}
+
 	handle_path /portainer/* {
 		reverse_proxy :9443 {
 			transport http {

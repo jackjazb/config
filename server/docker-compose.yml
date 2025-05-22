@@ -1,4 +1,5 @@
 services:
+  # Jellyfun
   jellyfin:
     image: jellyfin/jellyfin
     container_name: jellyfin
@@ -12,6 +13,7 @@ services:
         read_only: true
     restart: 'unless-stopped'
   
+  # Samba
   samba:
     image: dperson/samba
     container_name: samba
@@ -31,6 +33,7 @@ services:
         read_only: true
     command: '-s "Mount;/mnt;yes;yes;yes;all;none" -S'
   
+  # Portainer
   portainer:
     container_name: portainer
     image: portainer/portainer-ee:latest
@@ -38,9 +41,46 @@ services:
       - 9443:9443
       - 8000:8000
     volumes:
-        - portainer_data:/data
+        - ./portainer_data:/data
         - /var/run/docker.sock:/var/run/docker.sock
     restart: unless-stopped
     
-volumes:
-  portainer_data:
+  # Beszel.
+  beszel:
+    image: henrygd/beszel
+    container_name: beszel
+    environment:
+      APP_URL: https://shire.bear-antares.ts.net/beszel/
+    ports:
+      - 8090:8090
+    volumes:
+      - ./beszel_data:/beszel_data
+      - ./beszel_socket:/beszel_socket
+    restart: unless-stopped
+
+  beszel-agent:
+    image: "henrygd/beszel-agent"
+    container_name: "beszel-agent"
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./beszel_socket:/beszel_socket
+    environment:
+      LISTEN: /beszel_socket/beszel.sock
+      KEY: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG9WlbybUf2lDRs+BtYY2GWJIrAUZkboTBBVhl8mgTKu"
+
+  # CouchDB for Obsidian
+  couchdb:
+    image: couchdb
+    container_name: couchdb
+    restart: unless-stopped
+    ports:
+     - 5984:5984
+    volumes:
+     - ./couchdb/data:/opt/couchdb/data
+     - ./couchdb/config:/opt/couchdb/etc/local.d
+     - ./couchdb/log:/opt/couchdb/var/log
+    environment:
+      COUCHDB_USER: root
+      COUCHDB_PASSWORD: root

@@ -13,7 +13,7 @@ tasks:
       - caddy
       - docker
     cmds:
-      - rsync -avu --delete ./site/ {{.remote}}:/srv/
+      - rsync -avu --delete ./homepage/ {{.remote}}:{{.dir}}/homepage/
 
   caddy:
     desc: Sync and reload Caddy

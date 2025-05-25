@@ -1,0 +1,17 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/bookmarks
+
+- Bookmarks:
+    - Github:
+        - icon: github
+          href: https://github.com/
+    - Hacker News:
+        - icon: hacker-news
+          href: https://news.ycombinator.com/
+    - Lobsters:
+        - icon: mdi-size-l
+          href: https://lobste.rs/
+    - Minifeed:
+        - icon: mdi-star
+          href: https://minifeed.net/

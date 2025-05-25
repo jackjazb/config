@@ -1,0 +1,24 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services/
+
+- Services:
+    - Jellyfin:
+        href: /jellyfin/
+        siteMonitor: https://shire.bear-antares.ts.net/jellyfin/
+        icon: jellyfin
+
+    - Beszel:
+        href: /beszel/
+        siteMonitor: https://shire.bear-antares.ts.net/beszel/
+        icon: beszel
+
+    - Portainer:
+        href: /portainer/
+        siteMonitor: https://shire.bear-antares.ts.net/portainer/
+        icon: portainer
+
+    - CouchDB (Obsidian):
+        href: /couchdb/_utils/
+        siteMonitor: https://shire.bear-antares.ts.net/couchdb/
+        icon: couchdb

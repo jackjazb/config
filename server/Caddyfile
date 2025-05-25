@@ -21,7 +21,6 @@ shire.bear-antares.ts.net {
 	}
 
 	handle {
-		root * /srv
-		file_server
+		reverse_proxy :3000
 	}
 }

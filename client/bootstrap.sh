@@ -1,5 +1,5 @@
 #!/bin/sh
-sudo apt install git curl -y
+sudo apt install curl -y
 
 # `mise` installation
 curl https://mise.run | sh

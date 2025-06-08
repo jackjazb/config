@@ -23,3 +23,7 @@ Run `mise run gui` to copy icons and fonts for use on graphical systems.
 ## Docker
 
 OS specific scripts for installing Docker Engine can be found in `./docker`.
+
+## Management
+
+Run `mise tasks` to view available management tasks.

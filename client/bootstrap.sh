@@ -6,7 +6,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # `mise` installation
 curl https://mise.run | sh
-eval "$(mise activate zsh)"
+eval "$(~/.local/bin/mise activate zsh)"
 
 # System setup.
 mise run setup

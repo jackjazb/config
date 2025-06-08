@@ -10,7 +10,7 @@ run = ["sudo apt clean", "sudo apt autoremove -y --purge"]
 description = "Install system dependencies"
 depends = "update"
 depends_post = "clean"
-run = ["sudo apt -y install vim gcc libssl-dev tmux zsh jq"]
+run = ["sudo apt -y install vim gcc libssl-dev tmux jq"]
 
 [tasks.dotfiles]
 description = "Symlink dotfiles"
@@ -19,13 +19,17 @@ run = [
     "ln -sf {{cwd}}/dotfiles/.vimrc ~/.vimrc",
     "ln -sf {{cwd}}/dotfiles/.zshrc ~/.zshrc",
     "ln -sf {{cwd}}/dotfiles/aliases.zsh $ZSH/custom/aliases.zsh",
-    "ln -sf {{cwd}}/dotfiles/mise/config.toml ~/.config/mise/config.toml",
+    "mkdir -p ~/.config/mise/ && ln -sf {{cwd}}/dotfiles/mise/config.toml ~/.config/mise/config.toml",
     "unalias -a",
 ]
 
 [tasks.setup]
 description = "Set up a new system"
 depends = ["packages", "dotfiles"]
+run = [
+    # This sets up `sudo` password feedback.
+    "echo 'Defaults        pwfeedback' | sudo EDITOR='tee -a' visudo",
+]
 
 [tasks.gui]
 description = "Set up a GUI system"

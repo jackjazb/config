@@ -2,29 +2,19 @@
 
 Sets up any configuration needed on a new machine.
 
-## First Time Setup
+## Bootstrapping
 
 Run the following to set up a new system:
 
 ```sh
-source ./setup.sh
+source ./bootstrap.sh
 ```
 
-After `oh-my-zsh` is installed, run to install packages.
+Then run `omz reload` to change into the new system.
 
-```sh
-source ./packages.sh
-```
+## Graphical Systems
 
-This also runs `dotfiles.sh`, which symlinks everything in `./dotfiles` - edits to the system's config can then be made from this repo.
-
-## GUI Customisation
-
-The `gui.sh` script installs any GUI specific customisation (icons, themes, fonts etc.). Run it with
-
-```sh
-source ./gui.sh
-```
+Run `mise run gui` to copy icons and fonts for use on graphical systems.
 
 ## Docker
 

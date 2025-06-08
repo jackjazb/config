@@ -8,9 +8,13 @@ Run the following to set up a new system:
 
 ```sh
 source ./bootstrap.sh
+
+# Wait for zsh to install and activate.
+
+source ./bootstrap.sh
 ```
 
-Then run `omz reload` to change into the new system.
+This will install `oh-my-zsh` and `mise` along with a variety of other tools. `mise` will then install the tools defined in `./dotfiles/mise/config.toml`. Add a new tool with `mise use <tool>@latest`
 
 ## Graphical Systems
 

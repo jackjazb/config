@@ -4,6 +4,7 @@ services:
   homepage:
     image: ghcr.io/gethomepage/homepage:latest
     container_name: homepage
+    restart: unless-stopped
     ports:
       - 3000:3000
     volumes:
@@ -97,3 +98,15 @@ services:
     environment:
       COUCHDB_USER: root
       COUCHDB_PASSWORD: root
+
+  # Tiny File Manager
+  filebrowser:
+    image: filebrowser/filebrowser
+    container_name: filebrowser
+    restart: unless-stopped
+    ports:
+      - 3005:80
+    volumes:
+      - /:/srv
+      - ./filebrowser/filebrowser.db:/database.db
+      - ./filebrowser/.filebrowser.json:/.filebrowser.json

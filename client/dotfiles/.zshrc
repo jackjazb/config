@@ -49,14 +49,12 @@ export PATH="$HOME/.local/share/mise/shims:$PATH"
 
 eval "$(zoxide init zsh)"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 eval "$(mise activate zsh)"
 
 # pnpm
 export PNPM_HOME="/home/jack/.local/share/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end

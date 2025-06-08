@@ -13,6 +13,11 @@
         siteMonitor: https://shire.bear-antares.ts.net/beszel/
         icon: beszel
 
+    - File Browser:
+        href: /filebrowser/
+        siteMonitor: https://shire.bear-antares.ts.net/filebrowser/
+        icon: filebrowser
+
     - Portainer:
         href: /portainer/
         siteMonitor: https://shire.bear-antares.ts.net/portainer/

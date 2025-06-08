@@ -1,0 +1,45 @@
+[vars]
+remote = 'root@shire.bear-antares.ts.net'
+dir = '/home/jack'
+
+[tasks.sync]
+description = 'Sync all local config to the remote'
+run = [
+    'rsync -avu --delete ./homepage/ {{vars.remote}}:{{vars.dir}}/homepage/',
+    'rsync -avu --delete ./filebrowser/ {{vars.remote}}:{{vars.dir}}/filebrowser/',
+    'mise run docker',
+    'mise run caddy',
+]
+
+[tasks.caddy]
+description = 'Sync and reload Caddy'
+run = [
+    'rsync ./Caddyfile {{vars.remote}}:/etc/caddy/Caddyfile',
+    'ssh {{vars.remote}} "systemctl reload caddy"',
+]
+
+[tasks.docker]
+description = "Sync and reload Docker"
+run = [
+    'rsync ./docker-compose.yml {{vars.remote}}:{{vars.dir}}/docker-compose.yml',
+    'ssh {{vars.remote}} "docker compose -f {{vars.dir}}/docker-compose.yml up -d"',
+]
+
+[tasks.update]
+description = "Update the system and containers"
+run = [
+    'ssh {{vars.remote}} "sudo apt update && sudo apt upgrade -y"',
+    'ssh {{vars.remote}} "docker compose -f {{vars.dir}}/docker-compose.yml pull"',
+    'ssh {{vars.remote}} "docker compose -f {{vars.dir}}/docker-compose.yml up -d"',
+]
+
+[tasks.kick]
+description = "Restart everything"
+run = [
+    'ssh {{vars.remote}} "docker compose -f {{vars.dir}}/docker-compose.yml restart"',
+    'ssh {{vars.remote}} "systemctl restart caddy"',
+]
+
+[tasks.status]
+description = "Run fastfetch on the remote"
+run = ['ssh {{vars.remote}} "fastfetch"']

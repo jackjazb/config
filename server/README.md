@@ -20,11 +20,11 @@ Don't expose anything set up with this repo to the public internet.
 
 ## Management
 
-The Taskfile in this directory allows remote management of the server. Public key access to the root user is required for most tasks.
+Remote management tasks are defined in `mise.toml`. Public key access to the root user is required for most tasks.
 
-Install `task` with `npm install -g @go-task/cli`.
+Install `mise` with `curl https://mise.run | sh`.
 
-Use `task --list-all` for a summary of available management tasks.
+Use `mise tasks` for a summary of available management tasks.
 
 ## Services
 
@@ -36,7 +36,9 @@ handle_path /servicepath/* {
 }
 ```
 
-Then run `task caddy` to load the new config.
+You may also want to add an additional Homepage link - this can be added to [services.yaml](./homepage/services.yaml). Icons are either from [Dashboard Icons](https://dashboardicons.com/) or [Material Icons](https://pictogrammers.com/library/mdi/)
+
+Run `mise sync` to update the remote host.
 
 ## Notes
 

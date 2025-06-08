@@ -20,6 +20,10 @@ shire.bear-antares.ts.net {
 		}
 	}
 
+	handle_path /filebrowser/* {
+		reverse_proxy :3005
+	}
+
 	handle {
 		reverse_proxy :3000
 	}

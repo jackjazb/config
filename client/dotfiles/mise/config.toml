@@ -1,0 +1,9 @@
+[tools]
+go = "latest"
+yarn = "latest"
+deno = "latest"
+pnpm = "latest"
+node = "latest"
+rust = "latest"
+zoxide = "latest"
+fzf = "latest"

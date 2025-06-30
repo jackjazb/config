@@ -26,7 +26,7 @@ zstyle ':omz:update' mode auto # update automatically without asking
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=(git nvm alias-finder)
+plugins=(git rsync alias-finder)
 zstyle ':omz:plugins:alias-finder' autoload yes
 
 source $ZSH/oh-my-zsh.sh

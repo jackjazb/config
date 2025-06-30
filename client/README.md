@@ -9,7 +9,7 @@ Run the following to set up a new system:
 ```sh
 source ./bootstrap.sh
 
-# Wait for zsh to install and activate.
+# Wait for zsh to install and activate, then rerun:
 
 source ./bootstrap.sh
 ```

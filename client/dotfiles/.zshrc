@@ -46,6 +46,7 @@ export PATH=${PATH}:/opt/nvim-linux64/bin
 export PATH=${PATH}:$HOME/gems/bin
 export PATH=${PATH}:$HOME/.local/bin
 export PATH="$HOME/.local/share/mise/shims:$PATH"
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 eval "$(zoxide init zsh)"
 
@@ -58,3 +59,4 @@ case ":$PATH:" in
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+#

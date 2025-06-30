@@ -1,4 +1,4 @@
-" Don't try to be vi compatible
+
 set nocompatible
 
 " Helps force plugins to load correctly when it is turned back on below
@@ -18,6 +18,8 @@ set modelines=0
 
 " Show line numbers
 set number
+
+set rnu
 
 " Show file stats
 set ruler

@@ -13,3 +13,6 @@ mise run setup
 
 # Install tools.
 mise up
+
+# Set up git dir
+mkdir ~/git

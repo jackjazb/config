@@ -1,0 +1,18 @@
+
+[font.normal]
+family = "GeistMono NF"
+style = "Regular"
+
+[selection]
+save_to_clipboard = true
+
+[terminal.shell]
+program = "/bin/zsh"
+
+[window]
+startup_mode = "Maximized"
+
+[general]
+live_config_reload = true
+
+[terminal]

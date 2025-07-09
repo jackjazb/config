@@ -19,7 +19,8 @@ run = [
     "ln -sf {{cwd}}/dotfiles/.vimrc ~/.vimrc",
     "ln -sf {{cwd}}/dotfiles/.zshrc ~/.zshrc",
     "ln -sf {{cwd}}/dotfiles/aliases.zsh $ZSH/custom/aliases.zsh",
-    "mkdir -p ~/.config/mise/ && ln -sf {{cwd}}/dotfiles/mise/config.toml ~/.config/mise/config.toml",
+    "ln -sf {{cwd}}/dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml",
+    "mkdir -p ~/.config/mise/ && ln -sf {{cwd}}/dotfiles/mise.config.toml ~/.config/mise/config.toml",
     "unalias -a",
 ]
 

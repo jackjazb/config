@@ -22,6 +22,10 @@ services:
       - /home/jack/jellyfin/config:/config
       - /home/jack/jellyfin/cache:/cache
       - type: bind
+        source: /mnt/usb/films
+        target: /films
+        read_only: true
+      - type: bind
         source: /home/jack/jellyfin/media/music
         target: /media
         read_only: true

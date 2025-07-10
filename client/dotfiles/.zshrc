@@ -32,8 +32,9 @@ zstyle ':omz:plugins:alias-finder' autoload yes
 source $ZSH/oh-my-zsh.sh
 
 # Set the default editor.
-export EDITOR="vim"
-export VISUAL="vim"
+export EDITOR="nvim"
+export VISUAL="nvim"
+export BAT_PAGER="cat"
 
 # Add android tools to path.
 export ANDROID_HOME=$HOME/Android/Sdk
@@ -42,11 +43,8 @@ export ANDROID_HOME=$HOME/Android/Sdk
 export GEM_HOME="$HOME/gems"
 
 export PATH=${PATH}:$ANDROID_HOME/platform-tools/
-export PATH=${PATH}:/opt/nvim-linux64/bin
-export PATH=${PATH}:$HOME/gems/bin
 export PATH=${PATH}:$HOME/.local/bin
 export PATH="$HOME/.local/share/mise/shims:$PATH"
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 eval "$(zoxide init zsh)"
 
@@ -59,4 +57,3 @@ case ":$PATH:" in
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-#

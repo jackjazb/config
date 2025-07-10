@@ -1,4 +1,3 @@
-
 set nocompatible
 
 " Helps force plugins to load correctly when it is turned back on below

@@ -3,6 +3,9 @@
 family = "GeistMono NF"
 style = "Regular"
 
+[font]
+size = 8.0
+
 [selection]
 save_to_clipboard = true
 

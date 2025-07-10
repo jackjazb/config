@@ -1,6 +1,5 @@
 [tools]
 go = "latest"
-yarn = "latest"
 deno = "latest"
 pnpm = "latest"
 node = "latest"

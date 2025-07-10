@@ -1,37 +1,41 @@
-[tasks.update]
-description = "Update the system"
-run = ["sudo apt update", "sudo apt upgrade -y"]
-
-[tasks.clean]
-description = "Clean unused packages"
-run = ["sudo apt clean", "sudo apt autoremove -y --purge"]
-
-[tasks.packages]
-description = "Install system dependencies"
-depends = "update"
-depends_post = "clean"
-run = ["sudo apt -y install vim gcc libssl-dev tmux jq"]
-
 [tasks.dotfiles]
-description = "Symlink dotfiles"
-run = [
-    "ln -sf {{cwd}}/dotfiles/.gitconfig ~/.gitconfig",
-    "ln -sf {{cwd}}/dotfiles/.vimrc ~/.vimrc",
-    "ln -sf {{cwd}}/dotfiles/.zshrc ~/.zshrc",
-    "ln -sf {{cwd}}/dotfiles/aliases.zsh $ZSH/custom/aliases.zsh",
-    "ln -sf {{cwd}}/dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml",
-    "mkdir -p ~/.config/mise/ && ln -sf {{cwd}}/dotfiles/mise.config.toml ~/.config/mise/config.toml",
-    "unalias -a",
-]
+description = "Symlinks dotfiles"
+run = """
+#!/bin/bash
+# DO NOT change this to a relative dir, all the symlinks will die.
+dir={{cwd}}/dotfiles
+ln -sf $dir/.gitconfig    ~/.gitconfig
+ln -sf $dir/.vimrc        ~/.vimrc
+ln -sf $dir/.zshrc        ~/.zshrc
+ln -sf $dir/aliases.zsh   $ZSH/custom/aliases.zsh
+
+mkdir -p ~/.config/alacritty  && ln -sf $dir/alacritty.toml   ~/.config/alacritty/alacritty.tomlgc
+mkdir -p ~/.config/mise/      && ln -sf $dir/mise.config.toml ~/.config/mise/config.toml
+mkdir -p ~/.config/i3/        && ln -sf $dir/i3.config        ~/.config/i3/config
+
+cp -frs {{cwd}}/nvim ~/.config/
+
+unalias -a
+"""
 
 [tasks.setup]
 description = "Set up a new system"
-depends = ["packages", "dotfiles"]
 run = [
     # This sets up `sudo` password feedback.
     "echo 'Defaults        pwfeedback' | sudo EDITOR='tee -a' visudo",
+    "mise run dotfiles",
 ]
 
 [tasks.gui]
 description = "Set up a GUI system"
-run = ["cp -a ./icons/. $HOME/.icons", "cp -a ./fonts $HOME/.local/share/fonts"]
+run = [
+  "mkdir -p ~/.icons              && cp -a ./gui/icons/. ~/.icons", 
+  "mkdir -p ~/.local/share/fonts  && cp -a ./gui/fonts ~/.local/share/fonts",
+  "mkdir -p ~/.wallpaper          && cp -a ./gui/wallpaper ~/.wallpaper"
+]
+
+[tasks.wallpaper]
+description = "Set the system wallpaper"
+run = [
+  "feh --bg-scale {{cwd}}/wallpaper/{{arg(i=0)}}"
+]

@@ -4,7 +4,9 @@ Sets up any configuration needed on a new machine.
 
 ## Bootstrapping
 
-Run the following to set up a new system:
+First, install everything in `packages.txt` using your system's package manager.
+
+Then run the following:
 
 ```sh
 source ./bootstrap.sh
@@ -19,6 +21,7 @@ This will install `oh-my-zsh` and `mise` along with a variety of other tools. `m
 ## Graphical Systems
 
 Run `mise run gui` to copy icons and fonts for use on graphical systems.
+This will also copy `gui/wallpaper` to `~/.wallpaper`, which can then be used by `feh`.
 
 ## Docker
 

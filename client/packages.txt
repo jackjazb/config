@@ -1,1 +1,1 @@
-curl zsh vim curl git feh jq gcc
+curl zsh vim curl git feh jq gcc qutebrowser udiskie vscode man-db i3status-rust

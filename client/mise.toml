@@ -9,9 +9,10 @@ ln -sf $dir/.vimrc        ~/.vimrc
 ln -sf $dir/.zshrc        ~/.zshrc
 ln -sf $dir/aliases.zsh   $ZSH/custom/aliases.zsh
 
-mkdir -p ~/.config/alacritty  && ln -sf $dir/alacritty.toml   ~/.config/alacritty/alacritty.tomlgc
-mkdir -p ~/.config/mise/      && ln -sf $dir/mise.config.toml ~/.config/mise/config.toml
-mkdir -p ~/.config/i3/        && ln -sf $dir/i3.config        ~/.config/i3/config
+mkdir -p ~/.config/alacritty      && ln -sf $dir/alacritty.toml           ~/.config/alacritty/alacritty.tomlgc
+mkdir -p ~/.config/mise/          && ln -sf $dir/mise.config.toml         ~/.config/mise/config.toml
+mkdir -p ~/.config/i3/            && ln -sf $dir/i3.config                ~/.config/i3/config
+mkdir -p ~/.config/i3status-rust/ && ln -sf $dir/i3status-rs.config.toml  ~/.config/i3status-rust/config.toml
 
 cp -frs {{cwd}}/nvim ~/.config/
 
@@ -29,13 +30,7 @@ run = [
 [tasks.gui]
 description = "Set up a GUI system"
 run = [
-  "mkdir -p ~/.icons              && cp -a ./gui/icons/. ~/.icons", 
-  "mkdir -p ~/.local/share/fonts  && cp -a ./gui/fonts ~/.local/share/fonts",
-  "mkdir -p ~/.wallpaper          && cp -a ./gui/wallpaper ~/.wallpaper"
-]
-
-[tasks.wallpaper]
-description = "Set the system wallpaper"
-run = [
-  "feh --bg-scale {{cwd}}/wallpaper/{{arg(i=0)}}"
+  "mkdir -p ~/.icons              && cp -a ./gui/icons/. ~/.icons/", # Note that the /. is important for copying dir contents!
+  "mkdir -p ~/.local/share/fonts  && cp -a ./gui/fonts/. ~/.local/share/fonts/",
+  "mkdir -p ~/.wallpaper          && cp -a ./gui/wallpaper/. ~/.wallpaper/"
 ]

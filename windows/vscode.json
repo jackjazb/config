@@ -38,7 +38,7 @@
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "redhat.telemetry.enabled": false,
-  "editor.fontFamily": "RobotoMono Nerd Font",
+  "editor.fontFamily": "GeistMono Nerd Font",
   "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'",
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"

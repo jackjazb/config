@@ -2,6 +2,13 @@
 
 Sets up any configuration needed on a new machine.
 
+## To Do
+
+The following tasks are still manual:
+
+- Install Tailscale and log in
+- Set up `.ssh` dir
+
 ## Bootstrapping
 
 First, install everything in `packages.txt` using your system's package manager.
@@ -22,6 +29,8 @@ This will install `oh-my-zsh` and `mise` along with a variety of other tools. `m
 
 Run `mise run gui` to copy icons and fonts for use on graphical systems.
 This will also copy `gui/wallpaper` to `~/.wallpaper`, which can then be used by `feh`.
+
+`fc-list` can be used to verify the correct fonts have installed.
 
 ## Docker
 

@@ -15,6 +15,7 @@ mkdir -p ~/.config/i3/            && ln -sf $dir/i3.config                ~/.con
 mkdir -p ~/.config/i3status-rust/ && ln -sf $dir/i3status-rs.config.toml  ~/.config/i3status-rust/config.toml
 
 cp -frs {{cwd}}/nvim ~/.config/
+cp -frs {{cwd}}/qutebrowser ~/.config/
 
 unalias -a
 """
@@ -30,7 +31,7 @@ run = [
 [tasks.gui]
 description = "Set up a GUI system"
 run = [
-  "mkdir -p ~/.icons              && cp -a ./gui/icons/. ~/.icons/", # Note that the /. is important for copying dir contents!
-  "mkdir -p ~/.local/share/fonts  && cp -a ./gui/fonts/. ~/.local/share/fonts/",
-  "mkdir -p ~/.wallpaper          && cp -a ./gui/wallpaper/. ~/.wallpaper/"
+    "mkdir -p ~/.icons              && cp -a ./gui/icons/. ~/.icons/",             # Note that the /. is important for copying dir contents!
+    "mkdir -p ~/.local/share/fonts  && cp -a ./gui/fonts/. ~/.local/share/fonts/",
+    "mkdir -p ~/.wallpaper          && cp -a ./gui/wallpaper/. ~/.wallpaper/",
 ]

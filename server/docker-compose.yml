@@ -1,5 +1,4 @@
 services:
-
   # Homepage
   homepage:
     image: ghcr.io/gethomepage/homepage:latest
@@ -8,7 +7,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./homepage:/app/config 
+      - ./homepage:/app/config
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       HOMEPAGE_ALLOWED_HOSTS: shire.bear-antares.ts.net
@@ -17,7 +16,7 @@ services:
   jellyfin:
     image: jellyfin/jellyfin
     container_name: jellyfin
-    network_mode: 'host'
+    network_mode: "host"
     volumes:
       - /home/jack/jellyfin/config:/config
       - /home/jack/jellyfin/cache:/cache
@@ -29,15 +28,15 @@ services:
         source: /home/jack/jellyfin/media/music
         target: /media
         read_only: true
-    restart: 'unless-stopped'
-  
+    restart: "unless-stopped"
+
   # Samba
   samba:
     image: dperson/samba
     container_name: samba
     environment:
-      TZ: 'EST5EDT'
-    network_mode: 'host'
+      TZ: "EST5EDT"
+    network_mode: "host"
     read_only: true
     tmpfs:
       - /tmp
@@ -50,7 +49,7 @@ services:
         target: /mnt
         read_only: true
     command: '-s "Mount;/mnt;yes;yes;yes;all;none" -S'
-  
+
   # Portainer
   portainer:
     container_name: portainer
@@ -59,10 +58,10 @@ services:
       - 9443:9443
       - 8000:8000
     volumes:
-        - ./portainer_data:/data
-        - /var/run/docker.sock:/var/run/docker.sock
+      - ./portainer_data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
     restart: unless-stopped
-    
+
   # Beszel.
   beszel:
     image: henrygd/beszel
@@ -94,11 +93,11 @@ services:
     container_name: couchdb
     restart: unless-stopped
     ports:
-     - 5984:5984
+      - 5984:5984
     volumes:
-     - ./couchdb/data:/opt/couchdb/data
-     - ./couchdb/config:/opt/couchdb/etc/local.d
-     - ./couchdb/log:/opt/couchdb/var/log
+      - ./couchdb/data:/opt/couchdb/data
+      - ./couchdb/config:/opt/couchdb/etc/local.d
+      - ./couchdb/log:/opt/couchdb/var/log
     environment:
       COUCHDB_USER: root
       COUCHDB_PASSWORD: root
@@ -114,3 +113,65 @@ services:
       - /:/srv
       - ./filebrowser/filebrowser.db:/database.db
       - ./filebrowser/.filebrowser.json:/.filebrowser.json
+
+  # Immich
+  immich-server:
+    container_name: immich_server
+    image: ghcr.io/immich-app/immich-server:${IMMICH_VERSION:-release}
+    # extends:
+    #   file: hwaccel.transcoding.yml
+    #   service: cpu # set to one of [nvenc, quicksync, rkmpp, vaapi, vaapi-wsl] for accelerated transcoding
+    volumes:
+      # Do not edit the next line. If you want to change the media storage location on your system, edit the value of UPLOAD_LOCATION in the .env file
+      - ${UPLOAD_LOCATION}:/usr/src/app/upload
+      - /etc/localtime:/etc/localtime:ro
+    env_file:
+      - immich/.env
+    ports:
+      - "2283:2283"
+    depends_on:
+      - redis
+      - database
+    restart: always
+    healthcheck:
+      disable: false
+
+  immich-machine-learning:
+    container_name: immich_machine_learning
+    # For hardware acceleration, add one of -[armnn, cuda, rocm, openvino, rknn] to the image tag.
+    # Example tag: ${IMMICH_VERSION:-release}-cuda
+    image: ghcr.io/immich-app/immich-machine-learning:${IMMICH_VERSION:-release}
+    # extends: # uncomment this section for hardware acceleration - see https://immich.app/docs/features/ml-hardware-acceleration
+    #   file: hwaccel.ml.yml
+    #   service: cpu # set to one of [armnn, cuda, rocm, openvino, openvino-wsl, rknn] for accelerated inference - use the `-wsl` version for WSL2 where applicable
+    volumes:
+      - model-cache:/cache
+    env_file:
+      - immich/.env
+    restart: always
+    healthcheck:
+      disable: false
+
+  redis:
+    container_name: immich_redis
+    image: docker.io/valkey/valkey:8-bookworm@sha256:facc1d2c3462975c34e10fccb167bfa92b0e0dbd992fc282c29a61c3243afb11
+    healthcheck:
+      test: redis-cli ping || exit 1
+    restart: always
+
+  database:
+    container_name: immich_postgres
+    image: ghcr.io/immich-app/postgres:14-vectorchord0.4.3-pgvectors0.2.0@sha256:5f6a838e4e44c8e0e019d0ebfe3ee8952b69afc2809b2c25f7b0119641978e91
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_DB: ${DB_DATABASE_NAME}
+      POSTGRES_INITDB_ARGS: "--data-checksums"
+    volumes:
+      # Do not edit the next line. If you want to change the database storage location on your system, edit the value of DB_DATA_LOCATION in the .env file
+      - ${DB_DATA_LOCATION}:/var/lib/postgresql/data
+    shm_size: 128mb
+    restart: always
+
+volumes:
+  model-cache:

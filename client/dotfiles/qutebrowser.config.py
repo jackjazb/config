@@ -20,6 +20,6 @@ config.bind("<Ctrl-l>", "tab-next")
 config.bind("<Ctrl-h>", "tab-prev")
 config.bind("<Ctrl-f>", "cmd-set-text /")
 
-# i3 has `Alt` so bind Ctrl-{1-8} to each tab.
+# Bind Ctrl-{1-8} to each tab.
 for i in range(1, 8):
     config.bind(f"<Ctrl-{i}>", f"tab-focus {i}")

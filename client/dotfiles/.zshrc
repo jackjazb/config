@@ -57,3 +57,7 @@ case ":$PATH:" in
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+if [[ -z "$ZELLIJ" ]]; then
+  zellij attach --create default
+fi

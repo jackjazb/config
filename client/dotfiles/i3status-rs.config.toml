@@ -39,12 +39,6 @@ block = "battery"
 device = "BAT1"
 format = " $icon $percentage.eng(w:2) "
 
-# [[block]]
-# block = "sound"
-# [[block.click]]
-# button = "left"
-# cmd = "pavucontrol"
-
 [[block]]
 block = "time"
 interval = 5

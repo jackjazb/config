@@ -1,1 +1,11 @@
-curl zsh vim curl git feh jq gcc qutebrowser udiskie vscode man-db i3status-rust obsidian imagemagick keyutils xrandr
+# Must have
+curl zsh vim git jq gcc vscode man-db 
+
+# Wayland
+gammastep noto-fonts-emoji hyprpicker
+
+# Userspace
+qutebrowser obsidian 
+
+# X11
+i3status-rust keyutils xrandr feh udiskie imagemagick

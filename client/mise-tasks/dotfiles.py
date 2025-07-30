@@ -31,9 +31,11 @@ links = {
     dotfile("alacritty.toml"): system("~/.config/alacritty/alacritty.toml"),
     dotfile("mise.config.toml"): system("~/.config/mise/config.toml"),
     dotfile("i3.config"): system("~/.config/i3/config"),
+    dotfile("sway.config"): system("~/.config/sway/config"),
     dotfile("i3status-rs.config.toml"): system("~/.config/i3status-rust/config.toml"),
     dotfile("qutebrowser.config.py"): system("~/.config/qutebrowser/config.py"),
     dotfile("zellij.config.kdl"): system("~/.config/zellij/config.kdl"),
+    dotfile("gtk-3.0.settings.ini"): system("~/.config/gtk-3.0/settings.ini"),
 }
 
 for src, dest in links.items():

@@ -58,6 +58,3 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-if [[ -z "$ZELLIJ" ]]; then
-  zellij attach --create default
-fi

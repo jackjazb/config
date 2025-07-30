@@ -16,11 +16,11 @@ First, install everything in `packages.txt` using your system's package manager.
 Then run the following:
 
 ```sh
-source ./bootstrap.sh
+./bootstrap.sh
 
 # Wait for zsh to install and activate, then rerun:
 
-source ./bootstrap.sh
+./bootstrap.sh
 ```
 
 This will install `oh-my-zsh` and `mise` along with a variety of other tools. `mise` will then install the tools defined in `./dotfiles/mise/config.toml`. Add a new tool with `mise use <tool>@latest`

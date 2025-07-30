@@ -3,6 +3,7 @@ alias gc="git commit -m"
 alias cd="z"
 alias vim="nvim"
 alias pacman="sudo pacman"
+alias zellij="zellij a default"
 
 # Pretty printed docker ps replacement.
 function dps() {

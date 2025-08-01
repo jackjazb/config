@@ -8,7 +8,7 @@ gammastep noto-fonts-emoji hyprpicker wmenu swaybg swaylock swayidle
 upower
 
 # Userspace
-qutebrowser obsidian gnome-text-editor
+qutebrowser obsidian gnome-text-editor transmission-cli transmission-gtk
 
 # X11
 i3status-rust keyutils xrandr feh udiskie imagemagick

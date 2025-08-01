@@ -1,5 +1,5 @@
 # Must have
-curl zsh vim git jq vscode man-db 
+curl zsh vim git jq code man-db 
 
 # Wayland
 gammastep noto-fonts-emoji hyprpicker wmenu swaybg swaylock swayidle

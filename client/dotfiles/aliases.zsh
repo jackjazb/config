@@ -4,6 +4,7 @@ alias cd="z"
 alias vim="nvim"
 alias pacman="sudo pacman"
 alias zellij="zellij a default"
+alias vpn="sudo openvpn --config /etc/openvpn/ie-dub.prod.surfshark.com_udp.ovpn --auth-user-pass ~/.surfshark"
 
 # Pretty printed docker ps replacement.
 function dps() {

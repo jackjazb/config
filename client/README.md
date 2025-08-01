@@ -39,3 +39,7 @@ OS specific scripts for installing Docker Engine can be found in `./docker`.
 ## Management
 
 Run `mise tasks` to view available management tasks.
+
+## VPN
+
+There is a `vpn` alias configured in `aliases.zsh`. For it to work, create `~/.surfshark` and add credentials from [here](https://my.surfshark.com/vpn/manual-setup/main/openvpn). Follow the instructions in Obsidian to pull down config.

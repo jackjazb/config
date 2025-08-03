@@ -4,6 +4,9 @@ curl zsh vim git jq code man-db
 # Wayland
 gammastep noto-fonts-emoji hyprpicker wmenu swaybg swaylock swayidle
 
+# Screenshot command
+slurp grim wl-clipboard
+
 # Laptop status bar
 upower
 

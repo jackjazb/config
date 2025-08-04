@@ -20,10 +20,11 @@ shire.bear-antares.ts.net {
 		}
 	}
 
-	handle_path /filebrowser/* {
-		reverse_proxy :3005
+	handle_path /actual/* {
+		reverse_proxy :5006
 	}
 
+  # Root path for homepage 
 	handle {
 		reverse_proxy :3000
 	}

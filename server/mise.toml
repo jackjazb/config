@@ -6,7 +6,6 @@ dir = '/home/jack'
 description = 'Sync all local config to the remote'
 run = [
   'rsync -avu --delete ./homepage/ {{vars.remote}}:{{vars.dir}}/homepage/',
-  'rsync -avu --delete ./filebrowser/ {{vars.remote}}:{{vars.dir}}/filebrowser/',
   'rsync -avu --delete ./immich/ {{vars.remote}}:{{vars.dir}}/immich/',
   'mise run docker',
   'mise run caddy',

@@ -62,5 +62,8 @@ def network():
     return f"🛜 {status}"
 
 
-order = [battery(), network(), time(), "🧙‍♂️"]
-print(f"{' / '.join(order)}")
+try:
+    order = [battery(), network(), time(), "🧙‍♂️"]
+    print(f"{' / '.join(order)}")
+except Exception:
+    print("?")

@@ -1,17 +1,17 @@
 shire.bear-antares.ts.net {
-	handle_path /jellyfin/* {
+	handle_path /jellyfin* {
 		reverse_proxy :8096
 	}
 
-	handle_path /beszel/* {
+	handle_path /beszel* {
 		reverse_proxy :8090
 	}
 
-	handle_path /couchdb/* {
+	handle_path /couchdb* {
 		reverse_proxy :5984
 	}
 
-	handle_path /files/* {
+	handle_path /files* {
 		reverse_proxy :6000
 	}
 

@@ -91,12 +91,19 @@ services:
       COUCHDB_PASSWORD: root
 
   # Filebrowser
+  # Note - despite the missing docs, everything can be configured via FB_ variables.
+  # See https://github.com/filebrowser/filebrowser/blob/6d620c00a19c33e5cac10bfb2441846f30d0bade/cmd/root.go#L111
   filebrowser:
     image: filebrowser/filebrowser
     container_name: filebrowser
     restart: unless-stopped
+    environment:
+      FB_NOAUTH: true
+      FB_BASEURL: /files
     ports:
       - 6000:80
+    volumes:
+      - /home/jack:/srv
 
   # Immich - TBD
   # immich-server:
@@ -159,3 +166,4 @@ services:
 
 volumes:
   model-cache:
+  filebrowser_database:

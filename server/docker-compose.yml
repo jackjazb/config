@@ -90,25 +90,13 @@ services:
       COUCHDB_USER: root
       COUCHDB_PASSWORD: root
 
-  actual_server:
-    image: docker.io/actualbudget/actual-server:latest
-    container_name: actual
-    ports:
-      - "5006:5006"
-    volumes:
-      - ./actual-budget:/data
-    environment:
-      # ACTUAL_HOSTNAME: https://shire.bear-antares.ts.net/actual
-      # ACTUAL_SERVIER_URL: https://shire.bear-antares.ts.net/actual
-    # ACTUAL_WEB_ROOT: actual
-    healthcheck:
-      # Enable health check for the instance
-      test: ["CMD-SHELL", "node src/scripts/health-check.js"]
-      interval: 60s
-      timeout: 10s
-      retries: 3
-      start_period: 20s
+  # Filebrowser
+  filebrowser:
+    image: filebrowser/filebrowser
+    container_name: filebrowser
     restart: unless-stopped
+    ports:
+      - 6000:80
 
   # Immich - TBD
   # immich-server:

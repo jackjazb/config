@@ -13,10 +13,10 @@
         siteMonitor: https://shire.bear-antares.ts.net/beszel/
         icon: beszel
 
-    - Actual Budget:
-        href: /actual/
-        siteMonitor: https://shire.bear-antares.ts.net/actual
-        icon: actual-budget
+    - Files:
+        href: /files/
+        siteMonitor: https://shire.bear-antares.ts.net/files/
+        icon: files
 
     - CouchDB (Obsidian):
         href: /couchdb/_utils/

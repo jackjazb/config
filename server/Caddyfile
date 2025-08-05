@@ -11,17 +11,8 @@ shire.bear-antares.ts.net {
 		reverse_proxy :5984
 	}
 
-	handle_path /portainer/* {
-		reverse_proxy :9443 {
-			transport http {
-				tls
-				tls_insecure_skip_verify
-			}
-		}
-	}
-
-	handle_path /actual/* {
-		reverse_proxy :5006
+	handle_path /files/* {
+		reverse_proxy :6000
 	}
 
   # Root path for homepage 

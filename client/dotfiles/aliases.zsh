@@ -19,3 +19,8 @@ function ggs() {
         git status -s
     done
 }
+
+function geoloc() {
+  ip=$(curl -s https://icanhazip.com)
+  curl -s http://ip-api.com/json/$ip | jq
+}

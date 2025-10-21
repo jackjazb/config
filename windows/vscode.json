@@ -2,7 +2,7 @@
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
   "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
@@ -12,8 +12,10 @@
   "javascript.format.semicolons": "insert",
   "typescript.format.semicolons": "insert",
   "[python]": {
-    "editor.formatOnType": true
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "charliermarsh.ruff"
   },
+  "python.languageServer": "None",
   "workbench.iconTheme": "vscode-icons",
   "editor.rulers": [
     100
@@ -103,11 +105,12 @@
   "security.workspace.trust.untrustedFiles": "open",
   "go.toolsManagement.autoUpdate": true,
   "godotTools.editorPath.godot4": "c:\\Users\\Jack Jazrawy-Brown\\Downloads\\Godot_v4.2.2-stable_win64.exe\\Godot_v4.2.2-stable_win64.exe",
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit",
-    "source.organizeImports": "explicit",
-    "source.sortMembers": "explicit"
-  },
+  "editor.codeActionsOnSave": [
+    "source.fixAll",
+    "source.organizeImports",
+    "source.sortMembers",
+    "editor.format"
+  ],
   "cSpell.languageSettings": [
     {
       "languageId": "*",
@@ -151,7 +154,6 @@
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "editor.detectIndentation": false,
   "security.allowedUNCHosts": [
     "wsl.localhost"
   ],
@@ -160,5 +162,8 @@
   "javascript.suggest.jsdoc.generateReturns": false,
   "typescript.suggest.completeJSDocs": false,
   "typescript.suggest.jsdoc.generateReturns": false,
-  "workbench.colorTheme": "Catppuccin Mocha"
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

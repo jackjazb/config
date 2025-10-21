@@ -45,5 +45,9 @@
     {
         "key": "alt+i",
         "command": "editor.action.marker.next"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "editor.action.format"
     }
 ]

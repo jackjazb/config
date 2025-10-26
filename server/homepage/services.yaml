@@ -3,22 +3,27 @@
 # https://gethomepage.dev/configs/services/
 
 - Services:
+    - Actual:
+        href: https://actual.shire.network
+        siteMonitor: https://actual.shire.network
+        icon: actual-budget
+
     - Jellyfin:
-        href: /jellyfin/
-        siteMonitor: https://shire.bear-antares.ts.net/jellyfin/
+        href: https://jellyfin.shire.network
+        siteMonitor: https://jellyfin.shire.network
         icon: jellyfin
 
     - Beszel:
-        href: /beszel/
-        siteMonitor: https://shire.bear-antares.ts.net/beszel/
+        href: https://status.shire.network
+        siteMonitor: https://status.shire.network
         icon: beszel
 
     - Files:
-        href: /files/
-        siteMonitor: https://shire.bear-antares.ts.net/files/
+        href: https://files.shire.network
+        siteMonitor: https://files.shire.network
         icon: files
 
     - CouchDB (Obsidian):
-        href: /couchdb/_utils/
-        siteMonitor: https://shire.bear-antares.ts.net/couchdb/
+        href: https://couchdb.shire.network/_utils/
+        siteMonitor: https://couchdb.shire.network/
         icon: couchdb

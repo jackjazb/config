@@ -1,22 +1,27 @@
-shire.bear-antares.ts.net {
-	handle_path /jellyfin* {
-		reverse_proxy :8096
-	}
+{
+	acme_dns cloudflare {$CF_KEY}
+}
 
-	handle_path /beszel* {
-		reverse_proxy :8090
-	}
+shire.network {
+    reverse_proxy :3000
+}
 
-	handle_path /couchdb* {
-		reverse_proxy :5984
-	}
+jellyfin.shire.network {
+    reverse_proxy :8096
+}
 
-	handle_path /files* {
-		reverse_proxy :6000
-	}
+files.shire.network {
+	reverse_proxy :6000
+}
 
-  # Root path for homepage 
-	handle {
-		reverse_proxy :3000
-	}
+status.shire.network {
+	reverse_proxy :8090
+}
+
+couchdb.shire.network {
+	reverse_proxy :5984
+}
+
+actual.shire.network {
+	reverse_proxy :5006
 }

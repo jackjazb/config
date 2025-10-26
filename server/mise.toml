@@ -47,5 +47,5 @@ run = ['ssh {{vars.remote}} "fastfetch"']
 [tasks.backup]
 description = "Sync remote folders to the local machine for backup purposes"
 run = [
-  'rsync -avu --delete "jack@shire.bear-antares.ts.net:/home/jack/" "{{arg(i=0, default="/mnt/c/Users/Jack\ Jazrawy-Brown/Home/ShireBackup/")}}"',
+  'rsync -avu --delete "jack@shire.bear-antares.ts.net:/home/jack/actual" "./backup/actual"',
 ]

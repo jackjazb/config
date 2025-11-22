@@ -37,12 +37,12 @@ export VISUAL="nvim"
 export BAT_PAGER="cat"
 
 # Add android tools to path.
-export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_HOME=$HOME/.android_sdk/latest/
 
 # Ruby config
 export GEM_HOME="$HOME/gems"
 
-export PATH=${PATH}:$ANDROID_HOME/platform-tools/
+export PATH=${PATH}:$ANDROID_HOME/bin/
 export PATH=${PATH}:$HOME/.local/bin
 export PATH="$HOME/.local/share/mise/shims:$PATH"
 

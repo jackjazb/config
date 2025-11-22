@@ -25,6 +25,10 @@ services:
         target: /films
         read_only: true
       - type: bind
+        source: /home/jack/jellyfin/media/series
+        target: /series
+        read_only: true
+      - type: bind
         source: /home/jack/jellyfin/media/music
         target: /media
         read_only: true

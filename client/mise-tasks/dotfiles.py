@@ -27,6 +27,7 @@ links = {
     dotfile(".gitconfig"): system("~/.gitconfig"),
     dotfile(".vimrc"): system("~/.vimrc"),
     dotfile(".zshrc"): system("~/.zshrc"),
+    dotfile(".wezterm.lua"): system("~/.wezterm.lua"),
     dotfile("aliases.zsh"): system("$ZSH/custom/aliases.zsh"),
     dotfile("alacritty.toml"): system("~/.config/alacritty/alacritty.toml"),
     dotfile("mise.config.toml"): system("~/.config/mise/config.toml"),

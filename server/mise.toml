@@ -1,6 +1,11 @@
 [vars]
-remote = 'root@shire.bear-antares.ts.net'
+
+# Remote host and root directory to sync to.
+remote = 'root@shire.network'
 dir = '/home/jack'
+
+# Note - this may need to be edited on new systems.
+music_root = '/run/media/jack/Crucial X8/Media/Music/'
 
 [tasks.sync]
 description = 'Sync all local config to the remote'
@@ -11,13 +16,6 @@ run = [
   'mise run caddy',
 ]
 
-[tasks.caddy]
-description = 'Sync and reload Caddy'
-run = [
-  'rsync ./Caddyfile {{vars.remote}}:/etc/caddy/Caddyfile',
-  'ssh {{vars.remote}} "systemctl reload caddy"',
-]
-
 [tasks.docker]
 description = "Sync and reload Docker"
 run = [
@@ -25,6 +23,17 @@ run = [
   'ssh {{vars.remote}} "docker compose -f {{vars.dir}}/docker-compose.yml up -d"',
 ]
 
+[tasks.caddy]
+description = 'Sync and reload Caddy'
+run = [
+  'rsync ./Caddyfile {{vars.remote}}:/etc/caddy/Caddyfile',
+  'ssh {{vars.remote}} "systemctl reload caddy"',
+]
+
+[tasks.music]
+run = 'rsync -avu --delete "{{vars.music_root}}" "{{vars.remote}}:{{vars.dir}}/jellyfin/media/music/"'
+
+description = "Sync music folders"
 [tasks.update]
 description = "Update the system and containers"
 run = [
@@ -43,9 +52,3 @@ run = [
 [tasks.status]
 description = "Run fastfetch on the remote"
 run = ['ssh {{vars.remote}} "fastfetch"']
-
-[tasks.backup]
-description = "Sync remote folders to the local machine for backup purposes"
-run = [
-  'rsync -avu --delete "jack@shire.bear-antares.ts.net:/home/jack/actual" "./backup/actual"',
-]

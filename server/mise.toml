@@ -6,6 +6,7 @@ dir = '/home/jack'
 
 # Note - this may need to be edited on new systems.
 music_root = '/run/media/jack/Crucial X8/Media/Music/'
+music_backup = '/run/media/jack/Crucial X9/Music/'
 
 [tasks.sync]
 description = 'Sync all local config to the remote'
@@ -31,9 +32,14 @@ run = [
 ]
 
 [tasks.music]
+description = "Sync music folders"
 run = 'rsync -avu --delete "{{vars.music_root}}" "{{vars.remote}}:{{vars.dir}}/jellyfin/media/music/"'
 
-description = "Sync music folders"
+[tasks.backup_music]
+description = "Sync music folders to a secondary drive"
+run = 'rsync -avu --delete "{{vars.music_root}}" "{{vars.music_backup}}"'
+
+
 [tasks.update]
 description = "Update the system and containers"
 run = [

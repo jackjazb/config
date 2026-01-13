@@ -35,7 +35,6 @@ links = {
     dotfile("qutebrowser.config.py"): system("~/.config/qutebrowser/config.py"),
     dotfile("gtk-3.0.settings.ini"): system("~/.config/gtk-3.0/settings.ini"),
     dotfile("fonts.conf"): system("~/.config/fontconfig/fonts.conf"),
-    dotfile("wezterm.lue"): system("~/.wezterm.lua"),
 }
 
 for src, dest in links.items():

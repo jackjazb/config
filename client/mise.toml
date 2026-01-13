@@ -13,3 +13,13 @@ run = [
   "mkdir -p ~/.local/share/fonts  && cp -a ./gui/fonts/. ~/.local/share/fonts/",
   "mkdir -p ~/.wallpaper          && cp -a ./gui/wallpaper/. ~/.wallpaper/",
 ]
+
+[tasks.repos]
+description = "Clone everything from GitHub"
+run = """
+gh repo list | while read -r repo _; do
+  # This removes 'jackjazb/' from the beginning of the string
+  folder_name="${repo#jackjazb/}"
+  gh repo clone "$repo" "~/git/$folder_name"
+done
+"""

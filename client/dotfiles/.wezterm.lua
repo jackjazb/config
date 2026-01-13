@@ -30,4 +30,6 @@ config.keys = {
   }
 }
 
+config.enable_wayland = false
+
 return config

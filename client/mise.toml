@@ -9,7 +9,7 @@ run = [
 [tasks.gui]
 description = "Set up a GUI system"
 run = [
-  "mkdir -p ~/.icons              && cp -a ./gui/icons/. ~/.icons/",             # Note that the /. is important for copying dir contents!
+  "mkdir -p ~/.icons              && cp -a ./gui/icons/. ~/.icons/",
   "mkdir -p ~/.local/share/fonts  && cp -a ./gui/fonts/. ~/.local/share/fonts/",
   "mkdir -p ~/.wallpaper          && cp -a ./gui/wallpaper/. ~/.wallpaper/",
 ]

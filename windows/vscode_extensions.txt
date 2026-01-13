@@ -1,0 +1,17 @@
+astral-sh.ty
+bradlc.vscode-tailwindcss
+charliermarsh.ruff
+dbaeumer.vscode-eslint
+esbenp.prettier-vscode
+geequlim.godot-tools
+golang.go
+llvm-vs-code-extensions.lldb-dap
+mechatroner.rainbow-csv
+ms-pyright.pyright
+ms-python.debugpy
+ms-python.python
+ms-python.vscode-pylance
+ms-python.vscode-python-envs
+ms-vscode.cpptools
+tamasfe.even-better-toml
+vscode-icons-team.vscode-icons

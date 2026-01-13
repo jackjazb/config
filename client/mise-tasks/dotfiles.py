@@ -29,14 +29,13 @@ links = {
     dotfile(".zshrc"): system("~/.zshrc"),
     dotfile(".wezterm.lua"): system("~/.wezterm.lua"),
     dotfile("aliases.zsh"): system("$ZSH/custom/aliases.zsh"),
-    dotfile("alacritty.toml"): system("~/.config/alacritty/alacritty.toml"),
     dotfile("mise.config.toml"): system("~/.config/mise/config.toml"),
     dotfile("i3.config"): system("~/.config/i3/config"),
     dotfile("sway.config"): system("~/.config/sway/config"),
     dotfile("qutebrowser.config.py"): system("~/.config/qutebrowser/config.py"),
-    dotfile("zellij.config.kdl"): system("~/.config/zellij/config.kdl"),
     dotfile("gtk-3.0.settings.ini"): system("~/.config/gtk-3.0/settings.ini"),
     dotfile("fonts.conf"): system("~/.config/fontconfig/fonts.conf"),
+    dotfile("wezterm.lue"): system("~/.wezterm.lua"),
 }
 
 for src, dest in links.items():
@@ -48,10 +47,3 @@ for src, dest in links.items():
     # Create any paths required by the link and force symlink it.
     subprocess.run(["mkdir", "-p", dir])
     subprocess.run(["ln", "-sf", src, dest])
-
-print("")
-dirs = {"nvim": system("~/.config/")}
-
-for src, dest in dirs.items():
-    print_link(src, dest + src, list(dirs.values()))
-    subprocess.run(["cp", "-frs", f"{os.getcwd()}/{src}", f"{system(dest)}"])

@@ -1,0 +1,7 @@
+[vars]
+src = "/run/media/jack/Crucial X8/"
+dest = "/run/media/jack/LaCie/"
+
+[tasks.backup]
+description = "Backs up a drive"
+run = "rsync -avu --delete --progress '{{vars.src}}' '{{vars.dest}}'"

@@ -1,5 +1,4 @@
 [vars]
-
 # Remote host and root directory to sync to.
 remote = 'root@shire.network'
 dir = '/home/jack'
